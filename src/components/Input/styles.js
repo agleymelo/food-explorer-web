@@ -8,6 +8,9 @@ export const Container = styled.div`
 
   border-radius: 0.5rem;
 
+  display: flex;
+  align-items: center;
+
   > svg {
     margin-right: 0.875rem;
   }
@@ -15,6 +18,8 @@ export const Container = styled.div`
   > input {
     background: none;
     border: none;
+
+    font-size: 1.2rem;
 
     width: 100%;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};

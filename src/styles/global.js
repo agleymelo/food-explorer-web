@@ -21,10 +21,18 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 
-  body, input, button, textarea {
+  body, input, textarea {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
 
     -webkit-font-smoothing: antialiased;
+  }
+
+  a, button {
+    font-family: "Poppins", sans-serif;
+  }
+
+  a {
+    text-decoration: none;
   }
 `
