@@ -11,8 +11,12 @@ export default createGlobalStyle`
   :root {
     font-size: 16px;
 
-    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
       font-size: 0.75rem;
+    }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.lg}) {
+      font-size: 1rem;
     }
   }
 
@@ -21,7 +25,7 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 
-  body, input, textarea {
+  body, input, label, textarea {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
 

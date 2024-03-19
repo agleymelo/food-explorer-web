@@ -6,7 +6,7 @@ import logo from '../../assets/logo.svg'
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 
-export function SignIn() {
+export function SignUp() {
   return (
     <S.Container>
       <S.Header>
@@ -15,7 +15,9 @@ export function SignIn() {
       </S.Header>
 
       <S.Form action="">
-        <h2>Faça login</h2>
+        <h2>Crie sua conta</h2>
+        <label htmlFor="name">Seu Nome</label>
+        <Input id="name" type="email" placeholder="Exemplo: Maria da Silva" />
 
         <label htmlFor="email">Email</label>
         <Input id="email" type="email" placeholder="Exemplo: exemplo@exemplo.com.br" />
@@ -23,9 +25,9 @@ export function SignIn() {
         <label htmlFor="password">Senha</label>
         <Input id="password" type="password" placeholder="No mínimo 6 caracteres" />
 
-        <Button title="Entrar" />
+        <Button title="Criar conta" />
 
-        <Link to="/signup">Criar uma conta</Link>
+        <Link to="/signin">Já tenho uma conta</Link>
       </S.Form>
     </S.Container>
   )
