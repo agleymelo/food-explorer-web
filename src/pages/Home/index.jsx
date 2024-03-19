@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { Header } from '../../components/Header'
+import { SectionCard } from '../../components/SectionCard'
 
 import banner1 from '../../assets/banners/banner-1.svg'
 import banner2 from '../../assets/banners/banner-2.svg'
@@ -26,6 +27,10 @@ export function Home() {
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
           </S.BannerText>
         </S.Banner>
+
+        <main>
+          <SectionCard title="Refeições" data={{}} />
+        </main>
       </S.Container>
 
       {/* <Footer /> */}

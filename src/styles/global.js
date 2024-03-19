@@ -25,14 +25,14 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 
-  body, input, label, strong, textarea {
+  body, input, label, strong, textarea, span {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
 
     -webkit-font-smoothing: antialiased;
   }
 
-  a, button {
+  a, button, h2 {
     font-family: "Poppins", sans-serif;
   }
 

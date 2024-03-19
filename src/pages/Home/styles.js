@@ -2,11 +2,14 @@ import styled from 'styled-components'
 
 import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
 
-export const Container = styled.div``
+export const Container = styled.div`
+  width: min(89%, 1122px);
+
+  margin: 0 auto;
+`
 
 export const Banner = styled.section`
   max-width: 22.9375;
-  width: min(89%, 1122px);
   height: 7.5rem;
 
   background: ${({ theme }) => theme.COLORS.GRADIENTE_200};
