@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom'
 
-import * as S from './styles'
-
 import logo from '../../assets/logo.svg'
+
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
+
+import * as S from './styles'
 
 export function SignUp() {
   return (
     <S.Container>
       <S.Header>
         <img src={logo} alt="Logo em formato polígono na cor azul" />
-        <h1>Food explorer</h1>
       </S.Header>
 
       <S.Form action="">
-        <h2>Crie sua conta</h2>
+        <h1>Crie sua conta</h1>
         <label htmlFor="name">Seu Nome</label>
         <Input id="name" type="email" placeholder="Exemplo: Maria da Silva" />
 

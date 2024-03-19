@@ -10,7 +10,11 @@ export const Container = styled.div`
   align-items: center;
 
   > svg {
-    margin-right: 0.875rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+    height: 2rem;
+    width: 2rem;
   }
 
   > input {
@@ -18,7 +22,7 @@ export const Container = styled.div`
     border: none;
 
     font-size: 1rem;
-    padding: 1rem 0.75rem;
+    padding: 1rem 0.875rem;
 
     width: 100%;
     height: 4rem;

@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom'
 
-import * as S from './styles'
-
 import logo from '../../assets/logo.svg'
+
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
+
+import * as S from './styles'
 
 export function SignIn() {
   return (
     <S.Container>
       <S.Header>
         <img src={logo} alt="Logo em formato polígono na cor azul" />
-        <h1>Food explorer</h1>
       </S.Header>
 
       <S.Form action="">
-        <h2>Faça login</h2>
+        <h1>Faça login</h1>
 
         <label htmlFor="email">Email</label>
         <Input id="email" type="email" placeholder="Exemplo: exemplo@exemplo.com.br" />

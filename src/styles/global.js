@@ -25,7 +25,7 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 
-  body, input, label, textarea {
+  body, input, label, strong, textarea {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
 

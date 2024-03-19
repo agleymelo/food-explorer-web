@@ -36,7 +36,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  h2 {
+  h1 {
     display: none;
   }
 
@@ -74,7 +74,7 @@ export const Form = styled.form`
 
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
-    h2 {
+    h1 {
       margin-bottom: 2rem;
 
       display: block;
