@@ -23,43 +23,34 @@ export function Header({ onOpenMenu, onCloseMenu, menuIsOpen }) {
       <S.Menu>
         <div id="desktop">
           {isAdmin ? (
-            <>
-              <Link to="/">
-                <img src={logoSvg} alt="" />
-                <p>admin</p>
-              </Link>
-
-              <Input
-                icon={MagnifyingGlass}
-                placeholder="Busque por pratos ou ingredientes"
-                onChange={(e) => setSearch(e.target.value)}
-              />
-
-              <div className="actions">
-                <Button title="Novo prato" />
-
-                <SignOut />
-              </div>
-            </>
+            <Link to="/">
+              <img src={logoSvg} alt="" />
+              <p>admin</p>
+            </Link>
           ) : (
-            <>
-              <Link to="/">
-                <img src={logoSvg} alt="" />
-                <p>admin</p>
-              </Link>
+            <Link to="/">
+              <img src={logoSvg} alt="" />
+            </Link>
+          )}
 
-              <Input
-                icon={MagnifyingGlass}
-                placeholder="Busque por pratos ou ingredientes"
-                onChange={(e) => setSearch(e.target.value)}
-              />
+          <Input
+            icon={MagnifyingGlass}
+            placeholder="Busque por pratos ou ingredientes"
+            onChange={(e) => setSearch(e.target.value)}
+          />
 
-              <div className="actions">
-                <Button icon={Receipt} title="Pedidos (0)" />
+          {isAdmin ? (
+            <div className="actions">
+              <Button title="Novo prato" />
 
-                <SignOut />
-              </div>
-            </>
+              <SignOut />
+            </div>
+          ) : (
+            <div className="actions">
+              <Button icon={Receipt} title="Pedidos (0)" />
+
+              <SignOut />
+            </div>
           )}
         </div>
 

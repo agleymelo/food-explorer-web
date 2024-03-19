@@ -63,6 +63,7 @@ export const MenuMobileHeader = styled.header`
 export const MenuMobileContent = styled.div`
   max-width: 23.25rem;
   width: 100%;
+  height: 100%;
 
   margin: 0 auto;
 

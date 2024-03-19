@@ -3,6 +3,7 @@ import { MagnifyingGlass, X } from '@phosphor-icons/react'
 import { Input } from '../Input'
 
 import * as S from './styles'
+import { Footer } from '../Footer'
 
 export function SideMenu({ onCloseMenu, menuIsOpen, setSearch }) {
   const isAdmin = true
@@ -39,6 +40,8 @@ export function SideMenu({ onCloseMenu, menuIsOpen, setSearch }) {
               <button>Sair</button>
             </S.MenuMobileButtonAction>
           </S.MenuMobileContent>
+
+          <Footer />
         </>
       )}
     </S.MenuAsideMobile>
