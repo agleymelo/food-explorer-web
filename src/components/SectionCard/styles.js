@@ -3,21 +3,27 @@ import styled from 'styled-components'
 export const Container = styled.section`
   margin-top: 4rem;
 
+  & + section {
+    margin-top: 1.5rem;
+  }
+
+  & + section:last-child {
+    margin-bottom: 3rem;
+  }
+
   > h2 {
     font-size: 1.125rem;
     line-height: 140%;
     font-weight: 500;
   }
 
-  .swiper {
-    margin-bottom: 6rem;
-  }
 
   .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
 
   .swiper-button-next,
   .swiper-button-prev {

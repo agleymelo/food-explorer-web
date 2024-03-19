@@ -4,7 +4,7 @@ import { DEVICE_BREAKPOINTS } from "../../styles/device-breakpoints"
 
 export const MenuAsideMobile = styled.aside`
   position: absolute;
-  z-index: 10;
+  z-index: 1000;
   top: 0;
   right: 0;
 
@@ -17,6 +17,8 @@ export const MenuAsideMobile = styled.aside`
   transform: translateX(-100%);
 
   transition: transform 0.3s ease-in-out;
+
+  background-color: ${({ theme }) => theme.COLORS.DARK_900};
 
   &[data-menu-is-open='true'] {
     transform: translateX(0);

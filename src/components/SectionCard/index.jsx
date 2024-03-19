@@ -19,67 +19,69 @@ export function SectionCard({ title, data, ...rest }) {
     <S.Container>
       <h2>{title}</h2>
 
-      <Swiper
-        options
-        grabCursor={true}
-        loop={true}
-        modules={[Navigation, A11y, Pagination]}
-        navigation={true}
-        className="mySwiper"
-        breakpoints={{
-          '@0.00': {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          '@0.75': {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          '@1.00': {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-          '@1.20': {
-            slidesPerView: 4,
-            spaceBetween: 160,
-          },
-        }}
-      >
-        <SwiperSlide>
-          <S.Card>
-            <picture>
-              <img src={maskProduct} alt="" />
-            </picture>
-            <h3>Salada Ravanello &gt;</h3>
-            <span>R$ 49,97</span>
+      <S.Cards>
+        <Swiper
+          options
+          grabCursor={true}
+          loop={true}
+          modules={[Navigation, A11y, Pagination]}
+          navigation={true}
+          className="mySwiper"
+          breakpoints={{
+            '@0.00': {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            '@0.75': {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            '@1.00': {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            '@1.20': {
+              slidesPerView: 4,
+              spaceBetween: 160,
+            },
+          }}
+        >
+          <SwiperSlide>
+            <S.Card>
+              <picture>
+                <img src={maskProduct} alt="" />
+              </picture>
+              <h3>Salada Ravanello &gt;</h3>
+              <span>R$ 49,97</span>
 
-            <div>
-              <Minus />
-              <span>01</span>
-              <Plus />
-            </div>
+              <div>
+                <Minus />
+                <span>01</span>
+                <Plus />
+              </div>
 
-            <Button title="incluir" />
-          </S.Card>
-        </SwiperSlide>
-        <SwiperSlide>
-          <S.Card>
-            <picture>
-              <img src={maskProduct} alt="" />
-            </picture>
-            <h3>Salada Ravanello sdasd &gt;</h3>
-            <span>R$ 49,97</span>
+              <Button title="incluir" />
+            </S.Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <S.Card>
+              <picture>
+                <img src={maskProduct} alt="" />
+              </picture>
+              <h3>Salada Ravanello sdasd &gt;</h3>
+              <span>R$ 49,97</span>
 
-            <div>
-              <Minus />
-              <span>01</span>
-              <Plus />
-            </div>
+              <div>
+                <Minus />
+                <span>01</span>
+                <Plus />
+              </div>
 
-            <Button title="incluir" />
-          </S.Card>
-        </SwiperSlide>
-      </Swiper>
+              <Button title="incluir" />
+            </S.Card>
+          </SwiperSlide>
+        </Swiper>
+      </S.Cards>
     </S.Container>
   )
 }

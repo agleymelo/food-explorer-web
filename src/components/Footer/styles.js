@@ -11,7 +11,9 @@ export const Container = styled.footer`
 
   background-color: ${({ theme }) => theme.COLORS.DARK_600};
 
-  padding: 1.8125rem 1.6875rem;
+  /* padding: 1.8125rem 1.6875rem; */
+
+  padding: 0 1.625rem;
 
   p {
     font-family: 'Popins', sans-serif;

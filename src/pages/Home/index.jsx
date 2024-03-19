@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { Header } from '../../components/Header'
 import { SectionCard } from '../../components/SectionCard'
+import { Footer } from '../../components/Footer'
 
 import banner1 from '../../assets/banners/banner-1.svg'
 import banner2 from '../../assets/banners/banner-2.svg'
@@ -30,10 +31,12 @@ export function Home() {
 
         <main>
           <SectionCard title="Refeições" data={{}} />
+          <SectionCard title="Pratos principais" data={{}} />
+          <SectionCard title="Pratos principais" data={{}} />
         </main>
       </S.Container>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
