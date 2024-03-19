@@ -1,4 +1,4 @@
-import { Minus, Plus } from '@phosphor-icons/react'
+import { Minus, Plus, Heart, Pencil } from '@phosphor-icons/react'
 
 import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -15,6 +15,8 @@ import { Button } from '../Button'
 import * as S from './styles'
 
 export function SectionCard({ title, data, ...rest }) {
+  const isAdmin = true
+
   return (
     <S.Container>
       <h2>{title}</h2>
@@ -50,6 +52,7 @@ export function SectionCard({ title, data, ...rest }) {
             <S.Card>
               <picture>
                 <img src={maskProduct} alt="" />
+                {isAdmin ? <Pencil /> : <Heart />}
               </picture>
               <h3>Salada Ravanello &gt;</h3>
               <span>R$ 49,97</span>
@@ -67,6 +70,7 @@ export function SectionCard({ title, data, ...rest }) {
             <S.Card>
               <picture>
                 <img src={maskProduct} alt="" />
+                {isAdmin ? <Pencil /> : <Heart />}
               </picture>
               <h3>Salada Ravanello sdasd &gt;</h3>
               <span>R$ 49,97</span>

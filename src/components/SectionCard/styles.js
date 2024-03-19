@@ -77,6 +77,7 @@ export const Cards = styled.section`
 `
 
 export const Card = styled.div`
+
   max-width: 13.125rem;
   width: 100%;
   height: 18.25rem;
@@ -87,10 +88,25 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+  position: relative;
+
+  > picture {
+  }
 
   > picture > img {
     height: 5.5rem;
     width: 5.5rem;
+  }
+
+  > picture > svg {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    height: 1.5rem;
+    width: 1.5rem;
+
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
   }
 
   > h3 {
