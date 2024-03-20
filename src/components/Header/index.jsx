@@ -14,8 +14,6 @@ import * as S from './styles'
 export function Header({ onOpenMenu, onCloseMenu, menuIsOpen }) {
   const [search, setSearch] = useState('')
 
-  console.log(search)
-
   const isAdmin = true
 
   return (

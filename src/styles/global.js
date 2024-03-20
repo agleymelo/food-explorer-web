@@ -32,7 +32,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  a, button, h2 {
+  a, button, h2, h3 {
     font-family: "Poppins", sans-serif;
   }
 

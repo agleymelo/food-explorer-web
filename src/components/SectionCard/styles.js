@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
+
 export const Container = styled.section`
   margin-top: 4rem;
 
@@ -16,97 +18,79 @@ export const Container = styled.section`
     line-height: 140%;
     font-weight: 500;
   }
-
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 9rem;
-    height: 51.2rem;
-    margin: -25.6rem -1rem;
-
-    color: ${({ theme }) => theme.COLORS.CAKE_100};
-    font-weight: bolder;
-    mask-image: none;
-  }
-
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  }
-
-  .swiper-button-prev {
-    background: linear-gradient(
-      to left,
-      transparent 0%,
-      ${({ theme }) => theme.COLORS.DARK_900} 100% 0%,
-      transparent 100%
-    );
-  }
-
-  .swiper-button-next {
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      ${({ theme }) => theme.COLORS.DARK_900} 100% 0%,
-      transparent 100%
-    );
-  }
-
-  @keyframes scale-up-center {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.2);
-    }
-  }
 `
 
-export const Cards = styled.section`
+export const Carousel = styled.section`
   margin-top: 1.5rem;
-
-  display: flex;
-  align-items: center;
 `
 
 export const Card = styled.div`
-
-  max-width: 13.125rem;
-  width: 100%;
-  height: 18.25rem;
-
-  padding: 1.5rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+
   position: relative;
 
-  > picture {
+  @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    gap: 0.75rem;
+
+    max-width: 13.125rem;
+    width: 100%;
+    height: 18.25rem;
+
+    border: 1px solid red;
+
+    padding: 1.5rem;
+
+    > picture {
+      width: 5.5rem;
+      height: 5.5rem;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      svg {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        height: 1.5rem;
+        width: 1.5rem;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+      }
+    }
   }
 
-  > picture > img {
-    height: 5.5rem;
-    width: 5.5rem;
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    width: 19rem;
+    height: 28.875rem;
+
+    > picture {
+      width: 11rem;
+      height: 11rem;
+    }
   }
+`
 
-  > picture > svg {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+export const CardDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    height: 1.5rem;
-    width: 1.5rem;
-
-    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+  > p {
+    display: none;
+    visibility: hidden;
   }
 
   > h3 {
@@ -116,22 +100,33 @@ export const Card = styled.div`
   }
 
   > span {
+    margin: 0.75rem 0;
+
     font-size: 1rem;
     font-weight: 400;
     color: ${({ theme }) => theme.COLORS.CAKE_200};
   }
+`
 
-  > div {
+export const CardOptionsButton = styled.div`
+  @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
     display: flex;
-    align-items: center;
-    gap: 0.875rem;
+    flex-direction: column;
 
-    svg {
-      font-size: 2rem;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 0.875rem;
+
+      svg {
+        font-size: 2rem;
+      }
     }
-  }
 
-  button {
-    height: 2rem;
+    button {
+      height: 2rem;
+    }
   }
 `

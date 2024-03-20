@@ -31,8 +31,8 @@ export function Home() {
 
         <main>
           <SectionCard title="Refeições" data={{}} />
-          <SectionCard title="Pratos principais" data={{}} />
-          <SectionCard title="Pratos principais" data={{}} />
+          <SectionCard title="Sobremesas" data={{}} />
+          <SectionCard title="Bebidas" data={{}} />
         </main>
       </S.Container>
 

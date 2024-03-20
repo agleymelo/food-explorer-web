@@ -119,7 +119,7 @@ export const Menu = styled.div`
   #mobile {
     display: none;
 
-    @media (max-width: ${DEVICE_BREAKPOINTS.LG}) {
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
       height: 7.125rem;
 
       display: flex;
