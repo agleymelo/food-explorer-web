@@ -14,7 +14,7 @@ import theme from '../../styles/theme'
 
 import * as S from './styles'
 
-export function New() {
+export function EditDish() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   const a = 'Pão Naan'
@@ -64,14 +64,14 @@ export function New() {
             <CaretLeft /> Voltar
           </Link>
 
-          <h2>Novo Prato</h2>
+          <h2>Editar Prato</h2>
 
           <S.InputsWrapper>
             <S.InputFile>
               <span>Imagem do prato</span>
               <label htmlFor="photo">
                 <UploadSimple />
-                Selecionar Imagem
+                Selecione imagem para alterá-la
               </label>
 
               <input id="photo" type="file" name="image" accept="image/*" />
@@ -79,7 +79,7 @@ export function New() {
 
             <S.WrapperInputWithLabel>
               <label htmlFor="name">Nome</label>
-              <Input id="name" placeholder="Ex.: Salada Ceasar" />
+              <Input id="name" placeholder="Salada Ceasar" />
             </S.WrapperInputWithLabel>
 
             <S.WrapperInputWithLabel>
@@ -93,22 +93,24 @@ export function New() {
               <label htmlFor="">Ingredientes</label>
               <div className="ingredients">
                 <IngredientItem value="Pão Naan" size={a.length} />
-                <IngredientItem value="Pão Naan" size={a.length} />
                 <IngredientItem isNew size="9" placeholder="Adicionar" />
               </div>
             </S.WrapperInputWithLabel>
 
             <S.WrapperInputWithLabel>
               <label htmlFor="price">Preço</label>
-              <Input id="price" placeholder="R$ 00,00" />
+              <Input id="price" placeholder="R$ 40,00" />
             </S.WrapperInputWithLabel>
           </S.InputsWrapper>
 
           <S.DescriptionAndButtons>
-            <label htmlFor="description">Descrição</label>
+            <label htmlFor="description">A Salada César é uma opção refrescante para o verão.</label>
             <Textarea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição" />
 
-            <Button title="Salvar alterações" disabled />
+            <div>
+              <Button title="Excluir prato" disabled />
+              <Button title="Salvar alterações" disabled />
+            </div>
           </S.DescriptionAndButtons>
         </S.Form>
       </S.Content>

@@ -37,7 +37,7 @@ export const Content = styled.div`
   h2 {
     margin: 2rem 0;
 
-    font-size: 2rem;
+    font-size: 1.875rem;
     line-height: 140%;
   }
 
@@ -90,7 +90,7 @@ export const InputFile = styled.div`
 
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
 
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 2.4rem;
 
@@ -103,9 +103,10 @@ export const InputFile = styled.div`
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     > label {
+
       padding: 1rem 2rem;
 
-      width: 14.3125rem;
+      width: 18.3125rem;
       height: 3rem;
 
       flex-direction: row;
@@ -182,8 +183,19 @@ export const DescriptionAndButtons = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
   }
 
-  > button {
+  /* > button {
     margin-top: 2rem;
+  } */
+
+  > div {
+    margin-top: 2rem;
+
+    display: flex;
+    gap: 2rem;
+
+    button:first-child {
+      background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    }
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
@@ -191,10 +203,13 @@ export const DescriptionAndButtons = styled.div`
       margin: 0 0 1rem 0;
     }
 
-    > button {
-      width: 10.75rem;
-      height: 3rem;
+    > div {
       align-self: flex-end;
+
+      > button {
+        width: 12.75rem;
+        height: 3rem;
+      }
     }
 
     margin-bottom: 6rem;
