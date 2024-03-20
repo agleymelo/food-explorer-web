@@ -23,13 +23,13 @@ export default createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
+
+    -webkit-font-smoothing: antialiased;
   }
 
   body, input, label, strong, textarea, span {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
-
-    -webkit-font-smoothing: antialiased;
   }
 
   a, button, h2, h3 {

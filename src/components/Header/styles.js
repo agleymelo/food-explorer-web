@@ -2,7 +2,9 @@ import styled from 'styled-components'
 
 import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
 
-export const Container = styled.div``
+export const Container = styled.div`
+  background-color: ${({ theme }) => theme.COLORS.DARK_600};
+`
 
 export const MenuButton = styled.button`
   background: none;

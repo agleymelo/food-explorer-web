@@ -1,20 +1,24 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import { Header } from '../../components/Header'
-import { SectionCard } from '../../components/SectionCard'
-import { Footer } from '../../components/Footer'
+import { Header } from "../../components/Header";
+import { SectionCard } from "../../components/SectionCard";
+import { Footer } from "../../components/Footer";
 
-import banner1 from '../../assets/banners/banner-1.svg'
-import banner2 from '../../assets/banners/banner-2.svg'
+import banner1 from "../../assets/banners/banner-1.svg";
+import banner2 from "../../assets/banners/banner-2.svg";
 
-import * as S from './styles'
+import * as S from "./styles";
 
 export function Home() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
     <>
-      <Header onOpenMenu={() => setMenuIsOpen(true)} menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
+      <Header
+        onOpenMenu={() => setMenuIsOpen(true)}
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
 
       <S.Container>
         <S.Banner>
@@ -38,5 +42,5 @@ export function Home() {
 
       <Footer />
     </>
-  )
+  );
 }

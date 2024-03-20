@@ -18,7 +18,7 @@ export const MenuAsideMobile = styled.aside`
 
   transition: transform 0.3s ease-in-out;
 
-  background-color: ${({ theme }) => theme.COLORS.DARK_900};
+  background-color: ${({ theme }) => theme.COLORS.DARK_400};
 
   &[data-menu-is-open='true'] {
     transform: translateX(0);

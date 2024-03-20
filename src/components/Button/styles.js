@@ -28,4 +28,11 @@ export const Container = styled.button`
     height: 2rem;
     width: 2rem;
   }
+
+  &:disabled {
+    filter: brightness(0.8);
+    background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
+
+    cursor: not-allowed;
+  }
 `

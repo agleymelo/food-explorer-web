@@ -14,7 +14,7 @@ import * as S from './styles'
 export function Header({ onOpenMenu, onCloseMenu, menuIsOpen }) {
   const [search, setSearch] = useState('')
 
-  const isAdmin = true
+  const isAdmin = false
 
   return (
     <S.Container>
