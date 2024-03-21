@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
 
 export const Container = styled.div`
+  grid-area: header;
+
   background-color: ${({ theme }) => theme.COLORS.DARK_600};
 `
 

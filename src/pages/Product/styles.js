@@ -1,8 +1,22 @@
 import styled from 'styled-components'
+import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
 
-export const Container = styled.div``
+export const Container = styled.div`
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 6rem 1fr 4.8125rem;
+    grid-template-areas:
+      'header'
+      'content'
+      'footer';
+  }
+`
 
 export const Content = styled.div`
+  grid-area: content;
+
   display: flex;
   flex-direction: column;
 
@@ -17,6 +31,13 @@ export const Content = styled.div`
     line-height: 140%;
 
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    width: 70rem;
+    height: 26rem;
+
+    margin-top: 1.5rem;
   }
 `
 
@@ -33,6 +54,21 @@ export const ProductSection = styled.section`
       height: 18rem;
 
       object-fit: cover;
+    }
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    margin-top: 2.625rem;
+
+    flex-direction: row;
+    gap: 3rem;
+
+    > picture {
+      > img {
+        width: 24.375rem;
+        height: 24.3125rem;
+        object-fit: cover;
+      }
     }
   }
 `
@@ -65,6 +101,25 @@ export const ProductDetails = styled.div`
     line-height: 160%;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
   }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    align-items: flex-start;
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 140%;
+      font-weight: 500;
+    }
+
+    p {
+      margin-top: 1.5rem;
+
+      font-family: 'Popins', sans-serif;
+      font-size: 1.5rem;
+      line-height: 140%;
+      text-align: left;
+    }
+  }
 `
 export const ProductTags = styled.div`
   display: flex;
@@ -73,6 +128,10 @@ export const ProductTags = styled.div`
 
   flex-wrap: wrap;
   gap: 2rem;
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    margin-top: 1.5rem;
+  }
 `
 
 export const ProductAction = styled.div`
@@ -110,5 +169,11 @@ export const ProductAction = styled.div`
   > button {
     width: 13rem;
     height: 3rem;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    margin-top: 2rem;
+
+    justify-content: flex-start;
   }
 `

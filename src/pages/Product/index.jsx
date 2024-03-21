@@ -7,9 +7,10 @@ import productMask2 from '../../assets/products/mask-group-2.png'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 
-import * as S from './styles'
 import { Tag } from '../../components/Tag'
 import { Button } from '../../components/Button'
+
+import * as S from './styles'
 
 export function Product() {
   const { id } = useParams()
@@ -36,7 +37,7 @@ export function Product() {
           <S.ProductDetails>
             <h2>Salada Ravanello</h2>
 
-            <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+            <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.</p>
 
             <S.ProductTags>
               <Tag value="alface" />
