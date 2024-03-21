@@ -143,7 +143,7 @@ export const Menu = styled.div`
         p {
           font-size: 0.75rem;
           font-family: 'Roboto', sans-serif;
-          line-height: 160;
+          line-height: 160%;
           color: ${({ theme }) => theme.COLORS.CAKE_200};
         }
       }

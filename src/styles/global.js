@@ -15,7 +15,7 @@ export default createGlobalStyle`
       font-size: 0.75rem;
     }
 
-    @media (max-width: ${DEVICE_BREAKPOINTS.lg}) {
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
       font-size: 1rem;
     }
   }

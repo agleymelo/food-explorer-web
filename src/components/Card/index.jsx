@@ -47,44 +47,6 @@ export function Card({ ...rest }) {
             <Button title="incluir" />
           </S.CardActions>
         )}
-
-        {/* <a href="">
-          <img src={maskProduct} alt="" />
-        </a>
-
-        {isAdmin ? (
-          <S.IconWrapper to="/">
-            <Pencil className="edit" />
-          </S.IconWrapper>
-        ) : (
-          <S.IconWrapper to="/">
-            <Heart />
-          </S.IconWrapper>
-        )}
-
-        <S.TitleInformation to="/">
-          <h2>Salada Ravanello &gt;</h2>
-        </S.TitleInformation>
-
-        <S.Description>description</S.Description>
-
-        <S.Price>R$ 49,97</S.Price>
-
-        {!isAdmin && (
-          <S.Action>
-            <div className="buttons">
-              <button>
-                <Minus />
-              </button>
-              <span>01</span>
-              <button>
-                <Plus />
-              </button>
-            </div>
-
-            <Button title="incluir" />
-          </S.Action>
-        )} */}
       </S.Content>
     </S.Container>
   )
