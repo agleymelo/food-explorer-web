@@ -1,16 +1,16 @@
 import { Route, Routes } from 'react-router-dom'
 
 import { Home } from '../pages/Home'
-import { New } from '../pages/New'
-import { EditDish } from '../pages/EditDish'
+import { CreateNewProduct } from '../pages/CreateNewProduct'
+import { EditProduct } from '../pages/EditProduct'
 
 export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
 
-      <Route path="/new" element={<New />} />
-      <Route path="/dish/edit/:id" element={<EditDish />} />
+      <Route path="/product/create" element={<CreateNewProduct />} />
+      <Route path="/product/update/:id" element={<EditProduct />} />
     </Routes>
   )
 }

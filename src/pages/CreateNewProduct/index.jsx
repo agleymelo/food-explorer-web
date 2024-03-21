@@ -14,7 +14,7 @@ import theme from '../../styles/theme'
 
 import * as S from './styles'
 
-export function New() {
+export function CreateNewProduct() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   const a = 'Pão Naan'
