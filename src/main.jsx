@@ -6,6 +6,8 @@ import { Routes } from './routes/index.routes.jsx'
 import theme from './styles/theme.js'
 import GlobalStyle from './styles/global.js'
 
+import 'keen-slider/keen-slider.min.css'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

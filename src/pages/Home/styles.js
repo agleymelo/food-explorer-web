@@ -3,16 +3,47 @@ import styled from 'styled-components'
 import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
 
 export const Container = styled.div`
-  width: min(89%, 1122px);
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    height: 100vh;
 
+    display: grid;
+    grid-template-rows: 6rem 1fr 4.8125rem;
+    grid-template-areas:
+      'header'
+      'content'
+      'footer';
+  }
+`
+
+export const Content = styled.div`
+  grid-area: content;
+
+  width: 22rem;
   margin: 0 auto;
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
+    width: 31rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+    width: 42rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    min-width: 70rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 `
 
 export const Banner = styled.section`
-  max-width: 22.9375;
+  min-width: 11rem;
   height: 7.5rem;
 
   background: ${({ theme }) => theme.COLORS.GRADIENTE_200};
+  border-radius: 8px;
 
   margin: 4.4rem auto 0;
 
@@ -27,12 +58,6 @@ export const Banner = styled.section`
     left: -3rem;
     bottom: 0;
   }
-
-  /* @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
-    > picture > img {
-      display: none;
-    }
-  } */
 
   @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
     max-width: 41.25rem;
@@ -59,7 +84,7 @@ export const Banner = styled.section`
 `
 
 export const BannerText = styled.div`
- font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding-top: 3.6rem;
   width: 60%;
   z-index: 2;
@@ -105,6 +130,4 @@ export const BannerText = styled.div`
       font-weight: 400;
     }
   }
-
-  
 `
