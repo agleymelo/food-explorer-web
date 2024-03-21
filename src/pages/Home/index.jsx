@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Header } from '../../components/Header'
 import { SectionCard } from '../../components/SectionCard'
@@ -8,13 +8,31 @@ import banner1 from '../../assets/banners/banner-1.svg'
 import banner2 from '../../assets/banners/banner-2.svg'
 
 import * as S from './styles'
+import { api } from '../../services/api'
 
 export function Home() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
+  const [search, setSearch] = useState('')
+
+  useEffect(() => {
+    async function fetchDishes() {
+      const response = await api.get(`/dishes?name=${search}`)
+
+      console.log(response.data)
+    }
+
+    fetchDishes()
+  }, [search])
+
   return (
     <S.Container>
-      <Header onOpenMenu={() => setMenuIsOpen(true)} menuIsOpen={menuIsOpen} onCloseMenu={() => setMenuIsOpen(false)} />
+      <Header
+        onOpenMenu={() => setMenuIsOpen(true)}
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+        setSearch={setSearch}
+      />
 
       <S.Content>
         <S.Banner>

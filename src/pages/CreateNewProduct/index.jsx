@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { UploadSimple, CaretLeft } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 import CreatableSelect from 'react-select/creatable'
@@ -13,18 +13,26 @@ import { Footer } from '../../components/Footer'
 import theme from '../../styles/theme'
 
 import * as S from './styles'
+import { api } from '../../services/api'
 
 export function CreateNewProduct() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    async function fetchCategories() {
+      const response = await api.get('/categories')
+
+      setCategories(response.data)
+    }
+
+    fetchCategories()
+  }, [])
+
   const a = 'Pão Naan'
 
-  const options = [
-    { value: 'default', label: 'Selecione uma opção' },
-    { value: 'refeição', label: 'Refeição' },
-    { value: 'sobremesa', label: 'Sobremesa' },
-    { value: 'bebida', label: 'Bebida' },
-  ]
+  const options = categories.map((category) => ({ value: category.id, label: category.name }))
 
   const colourStyles = {
     control: (styles) => ({
@@ -82,10 +90,16 @@ export function CreateNewProduct() {
               <Input id="name" placeholder="Ex.: Salada Ceasar" />
             </S.WrapperInputWithLabel>
 
-            <S.WrapperInputWithLabel>
+            <S.WrapperSelect>
               <label htmlFor="category">Categoria</label>
-              <CreatableSelect options={options} styles={colourStyles} />
-            </S.WrapperInputWithLabel>
+              {/* <CreatableSelect options={options} styles={colourStyles} /> */}
+              <select name="" id="">
+                <option value="">Selecionar</option>
+                <option value="meal">Refeição</option>
+                <option value="dessert">Sobremesa</option>
+                <option value="beverage">Bebida</option>
+              </select>
+            </S.WrapperSelect>
           </S.InputsWrapper>
 
           <S.InputsWrapper>

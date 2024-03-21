@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Receipt, List, SignOut, MagnifyingGlass } from '@phosphor-icons/react'
 
@@ -10,11 +9,12 @@ import { Button } from '../Button'
 import { SideMenu } from '../SideMenu'
 
 import * as S from './styles'
+import { useAuth } from '../../context/AuthContext'
 
-export function Header({ onOpenMenu, onCloseMenu, menuIsOpen }) {
-  const [search, setSearch] = useState('')
+export function Header({ onOpenMenu, onCloseMenu, menuIsOpen, setSearch }) {
+  const { user } = useAuth()
 
-  const isAdmin = false
+  const isAdmin = user.role === 'admin'
 
   return (
     <S.Container>
@@ -39,8 +39,9 @@ export function Header({ onOpenMenu, onCloseMenu, menuIsOpen }) {
 
           {isAdmin ? (
             <div className="actions">
-              <Button title="Novo prato" />
-
+              <Link to="/product/create">
+                <Button title="Novo prato" />
+              </Link>
               <SignOut />
             </div>
           ) : (

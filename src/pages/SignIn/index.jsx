@@ -17,6 +17,9 @@ export function SignIn() {
 
   async function handleSignIn() {
     signIn({ email, password })
+
+    setEmail('')
+    setPassword('')
   }
 
   return (

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { MagnifyingGlass, X } from '@phosphor-icons/react'
 
 import { Input } from '../Input'
@@ -28,7 +29,9 @@ export function SideMenu({ onCloseMenu, menuIsOpen, setSearch }) {
 
             {isAdmin ? (
               <S.MenuMobileButtonAction>
-                <button>Novo prato</button>
+                <Link to="/product/create">
+                  <button>Novo prato</button>
+                </Link>
               </S.MenuMobileButtonAction>
             ) : (
               <S.MenuMobileButtonAction>

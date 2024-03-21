@@ -171,6 +171,48 @@ export const WrapperInputWithLabel = styled.div`
   }
 `
 
+export const WrapperSelect = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  > label {
+    margin: 2rem 0 1rem;
+    display: inline-block;
+
+    font-size: 1.1428571429rem;
+    color: ${({ theme }) => theme.COLORS.LIGHT_400};
+  }
+
+  select {
+    border: none;
+    cursor: pointer; 
+
+    width: 100%; 
+    padding: 1.2rem 1.6rem; 
+    border-radius: 0.8rem;
+
+    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 160%;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    > label {
+      margin: 0;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    select {
+      min-width: 20.75rem;
+      padding: 0.875rem;
+    }
+  }
+`
+
 export const DescriptionAndButtons = styled.div`
   display: flex;
   flex-direction: column;
