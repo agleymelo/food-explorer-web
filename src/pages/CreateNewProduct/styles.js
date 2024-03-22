@@ -188,15 +188,17 @@ export const WrapperSelect = styled.div`
     cursor: pointer;
 
     width: 100%;
-    padding: 1.2rem 1.6rem;
+    padding: 1rem 1.3333333333rem;
     border-radius: 0.8rem;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
-    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    color: ${({ theme }) => theme.COLORS.LIGHT_400};
 
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
     font-weight: 400;
-    font-size: 1.4rem;
     line-height: 160%;
+    color: ${({ theme }) => theme.COLORS.LIGHT_400};
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
@@ -208,7 +210,13 @@ export const WrapperSelect = styled.div`
 
     select {
       min-width: 20.75rem;
-      padding: 0.875rem;
+      padding: 0.8125rem 1rem;
+
+      font-family: "Roboto", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      line-height: 160%;
+      color: ${({ theme }) => theme.COLORS.LIGHT_400};
     }
   }
 `;

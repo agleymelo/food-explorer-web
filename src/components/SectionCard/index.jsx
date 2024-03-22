@@ -4,7 +4,7 @@ import { Card } from '../Card'
 
 import * as S from './styles'
 
-export function SectionCard({ title, data, ...rest }) {
+export function SectionCard({ title, children }) {
   const [sliderRef] = useKeenSlider({
     breakpoints: {
       '(min-width: 320px)': {
@@ -45,11 +45,7 @@ export function SectionCard({ title, data, ...rest }) {
       <h2>{title}</h2>
 
       <S.Carousel ref={sliderRef} className="keen-slider">
-        <Card className="keen-slider__slide" />
-        <Card className="keen-slider__slide" />
-        <Card className="keen-slider__slide" />
-        <Card className="keen-slider__slide" />
-        <Card className="keen-slider__slide" />
+        {children}
       </S.Carousel>
     </S.Container>
   )

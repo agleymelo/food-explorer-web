@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom'
-import { MagnifyingGlass, X } from '@phosphor-icons/react'
+import { Link } from "react-router-dom";
+import { MagnifyingGlass, X } from "@phosphor-icons/react";
 
-import { Input } from '../Input'
+import { Input } from "../Input";
+import { useAuth } from "../../context/AuthContext";
 
-import * as S from './styles'
-import { Footer } from '../Footer'
+import * as S from "./styles";
+import { Footer } from "../Footer";
 
 export function SideMenu({ onCloseMenu, menuIsOpen, setSearch }) {
-  const isAdmin = true
+  const { user } = useAuth();
+
+  const isAdmin = user.role === "admin";
 
   return (
     <S.MenuAsideMobile data-menu-is-open={menuIsOpen}>
@@ -48,5 +51,5 @@ export function SideMenu({ onCloseMenu, menuIsOpen, setSearch }) {
         </>
       )}
     </S.MenuAsideMobile>
-  )
+  );
 }

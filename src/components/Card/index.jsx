@@ -1,22 +1,32 @@
-import { Minus, Plus, Heart, Pencil } from '@phosphor-icons/react'
+import { Minus, Plus, Heart, Pencil } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
-import { Button } from '../Button'
+import { Button } from "../Button";
 
-import * as S from './styles'
+import { api } from "../../services/api";
+import { useAuth } from "../../context/AuthContext";
 
-export function Card({ ...rest }) {
-  const isAdmin = false
+import * as S from "./styles";
+
+export function Card({ id, name, description, price, picture, ...rest }) {
+  const { user } = useAuth();
+
+  const isAdmin = user.role === "admin";
+
+  const formmatedPrice = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(price);
 
   return (
     <S.Container {...rest}>
       <S.Content>
-        <a href="">
-          {/* <img src={maskProduct} alt="" /> */}
-          <img src="" alt="" />
-        </a>
+        <Link to={`/product/${id}`}>
+          <img src={`${api.defaults.baseURL}/files/${picture}`} alt="" />
+        </Link>
 
         {isAdmin ? (
-          <S.IconWrapper to="/">
+          <S.IconWrapper to={`/product/update/${id}`}>
             <Pencil className="edit" />
           </S.IconWrapper>
         ) : (
@@ -26,9 +36,9 @@ export function Card({ ...rest }) {
         )}
 
         <S.CardInformation>
-          <h3>Salada Ravanello &gt;</h3>
-          <p>description</p>
-          <span>R$ 49,97</span>
+          <h3>{name} &gt;</h3>
+          <p>{description}</p>
+          <span>{formmatedPrice}</span>
         </S.CardInformation>
 
         {!isAdmin && (
@@ -48,5 +58,5 @@ export function Card({ ...rest }) {
         )}
       </S.Content>
     </S.Container>
-  )
+  );
 }
