@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
+import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/device-breakpoints";
 
-export const Container = styled.div``
+export const Container = styled.div``;
 
 export const Content = styled.div`
   max-width: 22.75rem;
@@ -53,7 +53,7 @@ export const Content = styled.div`
       padding: 0.5rem;
     }
   }
-`
+`;
 
 export const Form = styled.form`
   display: flex;
@@ -62,13 +62,13 @@ export const Form = styled.form`
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     margin-top: 2.5rem;
   }
-`
+`;
 
 export const InputFile = styled.div`
   display: flex;
   flex-direction: column;
 
-  input[type='file'] {
+  input[type="file"] {
     display: none;
   }
 
@@ -113,7 +113,7 @@ export const InputFile = styled.div`
       font-size: 0.875rem;
     }
   }
-`
+`;
 
 export const InputsWrapper = styled.div`
   display: flex;
@@ -129,7 +129,7 @@ export const InputsWrapper = styled.div`
       margin-top: 2rem;
     }
   }
-`
+`;
 
 export const WrapperInputWithLabel = styled.div`
   width: 100%;
@@ -152,7 +152,7 @@ export const WrapperInputWithLabel = styled.div`
       height: 3rem;
     }
 
-    input[type='file'] {
+    input[type="file"] {
       display: none;
     }
 
@@ -169,7 +169,7 @@ export const WrapperInputWithLabel = styled.div`
       height: 3rem;
     }
   }
-`
+`;
 
 export const WrapperSelect = styled.div`
   display: flex;
@@ -185,10 +185,10 @@ export const WrapperSelect = styled.div`
 
   select {
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
 
-    width: 100%; 
-    padding: 1.2rem 1.6rem; 
+    width: 100%;
+    padding: 1.2rem 1.6rem;
     border-radius: 0.8rem;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
@@ -211,7 +211,7 @@ export const WrapperSelect = styled.div`
       padding: 0.875rem;
     }
   }
-`
+`;
 
 export const DescriptionAndButtons = styled.div`
   display: flex;
@@ -241,4 +241,4 @@ export const DescriptionAndButtons = styled.div`
 
     margin-bottom: 6rem;
   }
-`
+`;

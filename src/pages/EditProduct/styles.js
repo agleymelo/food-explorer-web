@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
+import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/device-breakpoints";
 
-export const Container = styled.div``
+export const Container = styled.div``;
 
 export const Content = styled.div`
   max-width: 22.75rem;
@@ -53,7 +53,7 @@ export const Content = styled.div`
       padding: 0.5rem;
     }
   }
-`
+`;
 
 export const Form = styled.form`
   display: flex;
@@ -62,13 +62,13 @@ export const Form = styled.form`
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     margin-top: 2.5rem;
   }
-`
+`;
 
 export const InputFile = styled.div`
   display: flex;
   flex-direction: column;
 
-  input[type='file'] {
+  input[type="file"] {
     display: none;
   }
 
@@ -103,7 +103,6 @@ export const InputFile = styled.div`
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     > label {
-
       padding: 1rem 2rem;
 
       width: 18.3125rem;
@@ -114,7 +113,7 @@ export const InputFile = styled.div`
       font-size: 0.875rem;
     }
   }
-`
+`;
 
 export const InputsWrapper = styled.div`
   display: flex;
@@ -130,7 +129,7 @@ export const InputsWrapper = styled.div`
       margin-top: 2rem;
     }
   }
-`
+`;
 
 export const WrapperInputWithLabel = styled.div`
   width: 100%;
@@ -153,7 +152,7 @@ export const WrapperInputWithLabel = styled.div`
       height: 3rem;
     }
 
-    input[type='file'] {
+    input[type="file"] {
       display: none;
     }
 
@@ -170,7 +169,49 @@ export const WrapperInputWithLabel = styled.div`
       height: 3rem;
     }
   }
-`
+`;
+
+export const WrapperSelect = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  > label {
+    margin: 2rem 0 1rem;
+    display: inline-block;
+
+    font-size: 1.1428571429rem;
+    color: ${({ theme }) => theme.COLORS.LIGHT_400};
+  }
+
+  select {
+    border: none;
+    cursor: pointer;
+
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    border-radius: 0.8rem;
+
+    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 160%;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    > label {
+      margin: 0;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    select {
+      min-width: 20.75rem;
+      padding: 0.875rem;
+    }
+  }
+`;
 
 export const DescriptionAndButtons = styled.div`
   display: flex;
@@ -214,4 +255,4 @@ export const DescriptionAndButtons = styled.div`
 
     margin-bottom: 6rem;
   }
-`
+`;

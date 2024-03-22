@@ -1,8 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { CaretLeft, Minus, Plus, Receipt } from '@phosphor-icons/react'
-
-import productMask2 from '../../assets/products/mask-group-2.png'
 
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
@@ -10,14 +8,43 @@ import { Footer } from '../../components/Footer'
 import { Tag } from '../../components/Tag'
 import { Button } from '../../components/Button'
 
+import { api } from '../../services/api'
+import { useAuth } from '../../context/AuthContext'
+
 import * as S from './styles'
 
 export function Product() {
+  const { user } = useAuth()
   const { id } = useParams()
 
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
-  const isAdmin = true
+  const isAdmin = user.role === 'admin'
+
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
+  const [price, setPrice] = useState('')
+  const [picture, setPicture] = useState('')
+  const [ingredients, setIngredients] = useState([])
+
+  const formmatedPrice = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price)
+
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(`/dishes/${id}`)
+
+      setName(response.data.name)
+      setDescription(response.data.description)
+      setPrice(response.data.price)
+      setPicture(response.data.picture)
+      setIngredients(response.data.ingredients)
+    }
+
+    fetchDish()
+  }, [id])
 
   return (
     <S.Container>
@@ -31,25 +58,24 @@ export function Product() {
 
         <S.ProductSection>
           <picture>
-            <img src={productMask2} alt="" />
+            <img src={`${api.defaults.baseURL}/files/${picture}`} alt="" />
           </picture>
 
           <S.ProductDetails>
-            <h2>Salada Ravanello</h2>
+            <h2>{name}</h2>
 
-            <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.</p>
+            <p>{description}</p>
 
             <S.ProductTags>
-              <Tag value="alface" />
-              <Tag value="cebola" />
-              <Tag value="pão naan" />
-              <Tag value="pepino" />
-              <Tag value="rabanete" />
-              <Tag value="tomate" />
+              {ingredients.map((ingredient) => (
+                <Tag key={ingredient} value={ingredient} />
+              ))}
             </S.ProductTags>
 
             {isAdmin ? (
-              <Button title="Editar prato" />
+              <Link to={`/product/update/${id}`}>
+                <Button title="Editar prato" />
+              </Link>
             ) : (
               <S.ProductAction>
                 <div>
@@ -62,7 +88,7 @@ export function Product() {
                   </button>
                 </div>
 
-                <Button icon={Receipt} title="pedir ∙ R$ 25,00" />
+                <Button icon={Receipt} title={`pedir ∙ ${formmatedPrice}`} />
               </S.ProductAction>
             )}
           </S.ProductDetails>

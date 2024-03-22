@@ -2,8 +2,6 @@ import { Minus, Plus, Heart, Pencil } from '@phosphor-icons/react'
 
 import { Button } from '../Button'
 
-import maskProduct from '../../assets/products/mask-group-1.png'
-
 import * as S from './styles'
 
 export function Card({ ...rest }) {
@@ -13,7 +11,8 @@ export function Card({ ...rest }) {
     <S.Container {...rest}>
       <S.Content>
         <a href="">
-          <img src={maskProduct} alt="" />
+          {/* <img src={maskProduct} alt="" /> */}
+          <img src="" alt="" />
         </a>
 
         {isAdmin ? (
