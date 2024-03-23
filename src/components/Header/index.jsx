@@ -1,20 +1,20 @@
-import { Link } from "react-router-dom";
-import { Receipt, List, SignOut, MagnifyingGlass } from "@phosphor-icons/react";
+import { Link } from 'react-router-dom'
+import { Receipt, List, SignOut, MagnifyingGlass } from '@phosphor-icons/react'
 
-import logoSvg from "../../assets/logo.svg";
+import logoSvg from '../../assets/logo.svg'
 
-import { Input } from "../Input";
-import { Button } from "../Button";
+import { Input } from '../Input'
+import { Button } from '../Button'
 
-import { SideMenu } from "../SideMenu";
+import { SideMenu } from '../SideMenu'
 
-import { useAuth } from "../../context/AuthContext";
-import * as S from "./styles";
+import { useAuth } from '../../context/AuthContext'
+import * as S from './styles'
 
 export function Header({ onOpenMenu, onCloseMenu, menuIsOpen, setSearch }) {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth()
 
-  const isAdmin = user.role === "admin";
+  const isAdmin = user.role === 'admin'
 
   return (
     <S.Container>
@@ -42,7 +42,8 @@ export function Header({ onOpenMenu, onCloseMenu, menuIsOpen, setSearch }) {
               <Link to="/product/create">
                 <Button title="Novo prato" />
               </Link>
-              <SignOut />
+
+              <SignOut onClick={signOut} />
             </div>
           ) : (
             <div className="actions">
@@ -81,13 +82,9 @@ export function Header({ onOpenMenu, onCloseMenu, menuIsOpen, setSearch }) {
               </S.MenuReceipt>
             </>
           )}
-          <SideMenu
-            menuIsOpen={menuIsOpen}
-            onCloseMenu={onCloseMenu}
-            setSearch={setSearch}
-          />
+          <SideMenu menuIsOpen={menuIsOpen} onCloseMenu={onCloseMenu} setSearch={setSearch} />
         </div>
       </S.Menu>
     </S.Container>
-  );
+  )
 }

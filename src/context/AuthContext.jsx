@@ -32,6 +32,15 @@ export function AuthProvider({ children }) {
     }
   }
 
+  function signOut() {
+    localStorage.removeItem('@food-explorer:user')
+    localStorage.removeItem('@food-explorer:token')
+
+    setData({})
+
+    toast.success('Logout feito com sucesso')
+  }
+
   useEffect(() => {
     const user = localStorage.getItem('@food-explorer:user')
     const token = localStorage.getItem('@food-explorer:token')
@@ -42,7 +51,7 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  return <AuthContext.Provider value={{ user: data.user, signIn }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>{children}</AuthContext.Provider>
 }
 
 export function useAuth() {

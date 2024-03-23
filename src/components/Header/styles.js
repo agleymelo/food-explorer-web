@@ -115,6 +115,8 @@ export const Menu = styled.div`
         > svg {
           height: 2rem;
           width: 2rem;
+
+          cursor: pointer;
         }
       }
     }

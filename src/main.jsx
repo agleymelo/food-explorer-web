@@ -6,7 +6,6 @@ import { Routes } from './routes/index.routes.jsx'
 import theme from './styles/theme.js'
 import GlobalStyle from './styles/global.js'
 
-import 'keen-slider/keen-slider.min.css'
 import { AuthProvider } from './context/AuthContext.jsx'
 import { Toaster } from 'react-hot-toast'
 

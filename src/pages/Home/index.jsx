@@ -1,51 +1,49 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-import { Header } from "../../components/Header";
-import { SectionCard } from "../../components/SectionCard";
-import { Footer } from "../../components/Footer";
+import { Header } from '../../components/Header'
+import { SectionCard } from '../../components/SectionCard'
+import { Footer } from '../../components/Footer'
 
-import banner1 from "../../assets/banners/banner-1.svg";
-import banner2 from "../../assets/banners/banner-2.svg";
+import banner1 from '../../assets/banners/banner-1.svg'
+import banner2 from '../../assets/banners/banner-2.svg'
 
-import { api } from "../../services/api";
-import { Card } from "../../components/Card";
+import { api } from '../../services/api'
+import { Card } from '../../components/Card'
 
-import * as S from "./styles";
+import * as S from './styles'
+
+import 'keen-slider/keen-slider.min.css'
 
 export function Home() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
 
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('')
 
   const [dishes, setDishes] = useState({
     meals: [],
     desserts: [],
     beverages: [],
-  });
+  })
 
   useEffect(() => {
     async function fetchDishes() {
-      const response = await api.get(`/dishes?search=${search}`);
+      const response = await api.get(`/dishes?search=${search}`)
 
-      const meals = response.data.filter((dish) => dish.category === "meal");
+      const meals = response.data.filter((dish) => dish.category === 'meal')
 
-      const desserts = response.data.filter(
-        (dish) => dish.category === "dessert",
-      );
+      const desserts = response.data.filter((dish) => dish.category === 'dessert')
 
-      const beverages = response.data.filter(
-        (dish) => dish.category === "beverage",
-      );
+      const beverages = response.data.filter((dish) => dish.category === 'beverage')
 
       setDishes({
         meals,
         desserts,
         beverages,
-      });
+      })
     }
 
-    fetchDishes();
-  }, [search]);
+    fetchDishes()
+  }, [search])
 
   return (
     <S.Container>
@@ -115,5 +113,5 @@ export function Home() {
 
       <Footer />
     </S.Container>
-  );
+  )
 }

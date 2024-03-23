@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { Home } from '../pages/Home'
 import { CreateNewProduct } from '../pages/CreateNewProduct'
@@ -13,6 +13,8 @@ export function AdminRoutes() {
       <Route path="/product/:id" element={<Product />} />
       <Route path="/product/create" element={<CreateNewProduct />} />
       <Route path="/product/update/:id" element={<EditProduct />} />
+
+      <Route path="*" exact={true} element={<Navigate to="/" />} />
     </Routes>
   )
 }

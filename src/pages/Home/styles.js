@@ -1,19 +1,19 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { DEVICE_BREAKPOINTS } from '../../styles/device-breakpoints'
+import { DEVICE_BREAKPOINTS } from "../../styles/device-breakpoints";
 
 export const Container = styled.div`
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 6rem 1fr 4.8125rem;
+    grid-template-rows: 6rem auto 4.8125rem;
     grid-template-areas:
-      'header'
-      'content'
-      'footer';
+      "header"
+      "content"
+      "footer";
   }
-`
+`;
 
 export const Content = styled.div`
   grid-area: content;
@@ -36,7 +36,7 @@ export const Content = styled.div`
     margin: 0 auto;
     padding: 0 2rem;
   }
-`
+`;
 
 export const Banner = styled.section`
   min-width: 11rem;
@@ -81,10 +81,10 @@ export const Banner = styled.section`
       width: 58%;
     }
   }
-`
+`;
 
 export const BannerText = styled.div`
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   padding-top: 3.6rem;
   width: 60%;
   z-index: 2;
@@ -130,4 +130,4 @@ export const BannerText = styled.div`
       font-weight: 400;
     }
   }
-`
+`;

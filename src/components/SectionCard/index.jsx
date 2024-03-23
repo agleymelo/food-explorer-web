@@ -30,7 +30,7 @@ export function SectionCard({ title, children }) {
       },
       '(min-width: 1024px)': {
         loop: true,
-        slidesPerView: 4,
+        slidesPerView: 2,
         // spacing: 40,
         slides: {
           perView: 3,
